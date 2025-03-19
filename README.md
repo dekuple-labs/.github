@@ -1,2 +1,4 @@
-# .github
-.github
+# DEKUPLE MARKETING CLOUD (DMC)
+
+
+[CHANGELOG](/CHANGELOG.md)
