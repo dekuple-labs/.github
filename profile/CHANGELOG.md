@@ -40,54 +40,55 @@
 ### Dev
 *   **Collection Name Extraction:** Fixed the regular expression to include digits when extracting the collection name from the path in `dmc-firestore-event-pipe`.
 *   **Cloud Build Issue:** Fixed a cloud build issue in `dmc-firestore-event-pipe`.
+
 # Changelog v0.2511.0  
 
-## 📊 Nouvelles fonctionnalités  
+## ✨ New Features
 
-### Frontend  
-- **Media Planning** :  
-  - Ajout d'un segment d'audience `withChildren`. (`533`)  
-  - Ajout de la propriété `incomeGroups`. (`532`)  
-- **SMS Content** : Sanitation du contenu pour supprimer les caractères non compatibles GMS7. (`530`)  
-- **Data Editor** :  
-  - Ajout d'un bouton pour réinitialiser les colonnes. (`496`)  
-  - Ajout du choix du type de zones de chalandise. (`493`)  
-- **UI** : Ajout d'un composant de dialogue de base. (`511`)  
-- **Clipboard** : Ajout d'un feedback lorsque l'utilisateur désactive la permission de copier/coller. (`423`)  
-- **Tableau de bord** : Ajout d'une directive permettant de cliquer sur une ligne de tableau `ag-Grid`. (`502`)  
+### Frontend
+*   **Media Planning**:
+    *   Added an audience segment `withChildren`. (`533`)
+    *   Added the `incomeGroups` property. (`532`)
+*   **SMS Content**: Sanitized content to remove GMS7 incompatible characters. (`530`)
+*   **Data Editor**:
+    *   Added a button to reset columns. (`496`)
+    *   Added the choice of trading area type. (`493`)
+*   **UI**: Added a basic dialog component. (`511`)
+*   **Clipboard**: Added feedback when the user disables copy/paste permission. (`423`)
+*   **Dashboard**: Added a directive to click on a row of an `ag-Grid` table. (`502`)
 
-### Backend  
-- **Firestore** :  
-  - Ajout d'une option pour surcharger les collections Firestore.  
-  - Ajout de la méthode `CollectionGroup` pour le client Firestore. (`#137`)  
-  - Ajout d'un mécanisme de surcharge de la collection `config`. (`#139`)  
-- **Géodonnées** : Migration vers `geo_json_v2` pour la gestion des ressources.  
-- **Zones de chalandise** :  
-  - Support de l'upload par morceaux (`chunk upload`).  
-  - Ajout des endpoints `get page` et `get all`.  
-  - Ajout du schéma `trading_area` avec validation améliorée (`allOf`, `oneOf`).  
-  - Amélioration du schéma des dépendances (`schema dependencies`).  
-- **Profils utilisateurs** :  
-  - Ajout des propriétés `houses`, `apartments`, `owners`, `leasers`, `withChildren` et `incomeGroups`.  
-  - Ajout de nouveaux filtres de propriétés : `houses`, `apartments`, `owners`, `leasers`, `with_children`, `income_group`. (`#136`)  
-- **Export de données** : Ajout d'un nouvel endpoint `data-exports`.  
-- **Datafield** : Ajout du schéma `trading_area` et amélioration de la validation (`allOf`, `oneOf`). (`#51bee5c`)  
-- **Dataloader & SFTPGo** : Ajout de nouveaux clients pour `dataloader` et `sftpgo`. (`#121`)  
+### Backend
+*   **Firestore**:
+    *   Added an option to overwrite Firestore collections.
+    *   Added the `CollectionGroup` method for the Firestore client. (`#137`)
+    *   Added a mechanism to override the `config` collection. (`#139`)
+*   **Geodata**: Migration to `geo_json_v2` for resource management.
+*   **Trading Areas**:
+    *   Support for chunked uploads (`chunk upload`).
+    *   Added `get page` and `get all` endpoints.
+    *   Added the `trading_area` schema with improved validation (`allOf`, `oneOf`).
+    *   Improved schema dependencies (`schema dependencies`).
+*   **User Profiles**:
+    *   Added the properties `houses`, `apartments`, `owners`, `leasers`, `withChildren` and `incomeGroups`.
+    *   Added new property filters: `houses`, `apartments`, `owners`, `leasers`, `with_children`, `income_group`. (`#136`)
+*   **Data Export**: Added a new `data-exports` endpoint.
+*   **Datafield**: Added the `trading_area` schema and improved validation (`allOf`, `oneOf`). (`#51bee5c`)
+*   **Dataloader & SFTPGo**: Added new clients for `dataloader` and `sftpgo`. (`#121`)
 
-## 🛠 Corrections de bugs  
+## 🐛 Bug Fixes
 
-### Frontend  
-- **Data Editor** :  
-  - Ajustement des appels au schéma JSON. (`516`)  
-  - Correction de l'événement `checkbox select` pour éviter la propagation. (`505`)  
-  - Modification des labels pour le mapping et l'affichage en liste. (`499`)  
-- **Gestion des comptes** : Correction de la redirection avec les paramètres de requête par défaut. (`434`)  
-- **Dépendances circulaires** : Correction des imports pour éviter les erreurs de dépendances circulaires.  
-- **Géocodage** : Révision des abonnements et amélioration des performances. (`513`)  
+### Frontend
+*   **Data Editor**:
+    *   Adjusted calls to the JSON schema. (`516`)
+    *   Fixed the `checkbox select` event to prevent propagation. (`505`)
+    *   Modified labels for mapping and list display. (`499`)
+*   **Account Management**: Fixed redirection with default query parameters. (`434`)
+*   **Circular Dependencies**: Fixed imports to avoid circular dependency errors.
+*   **Geocoding**: Revised subscriptions and improved performance. (`513`)
 
-### Backend  
-- **OpenAPI** : Correction des chemins des zones de chalandise.  
-- **Validation des données** : Correction des erreurs liées aux dépendances (`dependentRequired`).  
-- **POI** : Correction du champ `partitionID`.  
-- **Divers** : Corrections de typographies et améliorations de la validation des schémas.  
-- **Gomod** : Correction des dépendances Go Modules. (`#0d0b7d8`)  
+### Backend
+*   **OpenAPI**: Fixed trading area paths.
+*   **Data Validation**: Fixed errors related to dependencies (`dependentRequired`).
+*   **POI**: Fixed the `partitionID` field.
+*   **Miscellaneous**: Fixed typos and improved schema validation.
+*   **Gomod**: Fixed Go Modules dependencies. (`#0d0b7d8`)
