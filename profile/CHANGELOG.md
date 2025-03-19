@@ -1,34 +1,45 @@
 # Changelog v0.2512.2  
 
-## 📊 Nouvelles fonctionnalités  
+## ✨ New Features
 
-### Frontend  
-- **Data Editor** :  
-  - Activation du support des zones de chalandise en production. (`9cc622ea`)  
-  - Ajout du support des zones de chalandise :  
-    - Flux d'importation  
-    - Visualisation des zones  
-    - Détails des POI (`cc2c7da2`)  
-- **Bibliothèques externes** :  
-  - Remplacement de `ngx-max-timepicker` par `@dmc/ngx-mat-timepicker`.  
-  - Ajout d'une gestion améliorée des dépendances et correction des styles. (`a1d8d091`)  
-- **Import de données** : Mise à jour de l'URL pour les imports batch. (`b83c8b5c`)  
+### Data
+*   **New Geo JSON Data Source:** Added a new geo JSON data source with arrondissements.
+*   **Enhanced Profile Enrichment:** Added a category for CSP (socio-professional category) dimension to enriched profiles, including income group and housing properties.
+*   **With Children Targeting Criteria:** Added a `with_children` dimension to aggregated profiles.
+*   **Potentials Global Iris Details:** Added `with_iris` and `is_geocoding_approximated` fields to `potentials_global`.
+*   **Incremental Load Modes in Data Loader:** The data loader now supports overwrite, append, and incremental modes.
+*   **Email Notifications for Data Exporter:** The data exporter now sends email notifications.
+*   **Custom Schema for Firestore Sync:**  Implemented the ability to use custom schemas for syncing specific collections in Firestore.
 
-### Backend  
-- **Recherche dans les ressources** :  
-  - Ajout automatique de wildcard dans les requêtes de recherche. (`05452ac`)  
-  - Simplification de la recherche `bleve`, en utilisant l'analyseur `simple` et une requête `query string`. (`5959496`)  
-- **Profils utilisateurs** : Ajout de l'ID dans le filtre de comptage des coordonnées. (`077990e`)  
+### Frontend
+*   **Trading Area in Data Editor:** Enabled the trading area feature in the data editor for production, including trading area visualization and POI details.
+*   **Timepicker Component:** Replaced `dhutaryan/ngx-max-timepicker` with `@dmc/ngx-mat-timepicker` for time input.
+*   **Batch Import URL Update:** Updated the batch import URL in the data editor.
+*   **Auto Append Wildcard in Search Query:** Implemented automatic appending of wildcards in search queries.
 
-## 🛠 Corrections de bugs  
+## 🐛 Bug Corrections
 
-### Frontend  
-- **Partage** : Affichage des `incomeGroups` même lorsque `housings` est manquant. (`f4de2787`)  
-- **Vue partagée** : Extraction correcte des valeurs des objets. (`5ea111a4`)  
+### Infra
+*   **Bleve Index with Simple Analyzer:** Fixed the backend to use a bleve index built with a simple analyzer.
+*   **BigQuery Permissions:** Corrected the service account used for BigQuery permissions.
+*   **Cons Exports Authorized Datasets:** Fixed the authorized datasets for consumer exports.
 
-### Backend  
-- **Profils utilisateurs** : Suppression des valeurs des labels `incomeGroup`. (`9d10528`)  
+### Data
+*   **Geometry Removal from Prioritized Profiles:** Removed geometry from prioritized profiles and fixed the city type filter.
+*   **Join Key Issue:** Fixed an issue where the `col_type` was being removed from the join key, causing incorrect join conditions. Also, improved filtering on blacklist and removed unnecessary columns from selects.
 
+### Frontend
+*   **Income Groups Display:** Fixed an issue in the sharing component where income groups were not displayed when housing data was missing.
+*   **Shared View Object Values:** Corrected the extraction of object values in the shared view.
+
+### Backend
+*   **Simplified Bleve Search:** Simplified bleve search using a 'simple' analyzer and 'query string' query.
+*   **Coordinate Counting Filter:** Added ID to the coordinate counting filter in profiles.
+*   **Income Group Labels:** Removed values from income group labels.
+
+### Dev
+*   **Collection Name Extraction:** Fixed the regular expression to include digits when extracting the collection name from the path in `dmc-firestore-event-pipe`.
+*   **Cloud Build Issue:** Fixed a cloud build issue in `dmc-firestore-event-pipe`.
 # Changelog v0.2511.0  
 
 ## 📊 Nouvelles fonctionnalités  
