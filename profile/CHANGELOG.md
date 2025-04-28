@@ -1,3 +1,43 @@
+# Changelog v0.2518.0
+
+## ✨ New Features
+
+### Data
+
+*   **Improved Point of Interest (POI) Data:** Simplified POI identifiers and added more comprehensive information about POIs in various datasets, including campaign statistics, trading areas, and SMS data. This makes it easier to analyze and target specific locations.
+*   **Enhanced Trading Area Analysis:** Added new views and functions to better analyze trading areas, including municipality and iris data, along with key organizational information.
+
+### Backend & Infrastructure
+
+*   **Multi-POI Functionality:** Implemented several features to support multi-POI campaigns and reporting, including new API endpoints, data export options, and validation processes.
+*   **Improved API and Reporting:** Enhanced campaign reporting with paginated data and dedicated endpoints for POIs.
+*   **Modernized Technology Stack:** Upgraded to Go 1.24.2 and enabled HTTP/2 for improved performance.
+*   **Media Planning improvements:** Added poi filters
+
+### Frontend
+
+*   **Media Planning Enhancements:** Improved media planning capabilities with POI count for tags, POI network visualization, and the ability to export maximum potential reach.
+*   **Reporting Improvements:** Added support for multi-POI reporting.
+*   **Data Editor Activation:** The data editor is now live in the production environment.
+*   **Core UI Improvements:** Added a splash screen and maintenance mode.
+*   **Campaign Management:** Added support for multi-store campaigns.
+
+## 🐛 Bug Fixes
+
+### Data
+
+*   **Blacklist Fix:** Corrected an issue with mobile phone blacklists.
+*   **Data Accuracy:** Fixed issues with data collection and trading area calculations.
+
+### Backend & Infrastructure
+
+*   **Technical Fixes:** Addressed issues related to configuration, data accuracy, and template rendering.
+
+### Frontend
+
+*   **UI Fixes:** Resolved various UI issues, including scaling problems, button functionality, and layout issues in media planning and reporting.
+
+
 # Changelog v0.2512.2  
 
 ## ✨ New Features
