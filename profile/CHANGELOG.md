@@ -1,42 +1,68 @@
-# Changelog v0.2518.0
+# CHANGELOG v0.2518.0
 
 ## ✨ New Features
 
-### Data
-
-*   **Improved Point of Interest (POI) Data:** Simplified POI identifiers and added more comprehensive information about POIs in various datasets, including campaign statistics, trading areas, and SMS data. This makes it easier to analyze and target specific locations.
-*   **Enhanced Trading Area Analysis:** Added new views and functions to better analyze trading areas, including municipality and iris data, along with key organizational information.
-
-### Backend & Infrastructure
-
-*   **Multi-POI Functionality:** Implemented several features to support multi-POI campaigns and reporting, including new API endpoints, data export options, and validation processes.
-*   **Improved API and Reporting:** Enhanced campaign reporting with paginated data and dedicated endpoints for POIs.
-*   **Modernized Technology Stack:** Upgraded to Go 1.24.2 and enabled HTTP/2 for improved performance.
-*   **Media Planning improvements:** Added poi filters
-
 ### Frontend
-
-*   **Media Planning Enhancements:** Improved media planning capabilities with POI count for tags, POI network visualization, and the ability to export maximum potential reach.
-*   **Reporting Improvements:** Added support for multi-POI reporting.
-*   **Data Editor Activation:** The data editor is now live in the production environment.
-*   **Core UI Improvements:** Added a splash screen and maintenance mode.
-*   **Campaign Management:** Added support for multi-store campaigns.
-
-## 🐛 Bug Fixes
-
+*   **Media Planning:** You can now see the number of Points of Interest (POI) for each tag in media planning.
+*   **Reporting:** Enhanced reporting to support multiple Points of Interest (POI).
+*   **Data Editor:** The data editor is now activated for production use.
+*   **Core:** A splash screen has been added to the application.
+*   **Campaigns:** You can now add multiple stores to campaigns.
+*   **Media Planning:** Introduced POI network functionality, including targeted zones, saving counts, a new component, and map cluster markers.
+*   **Media Planning:** Added the ability to export the maximum potential reach.
+### Backend
+*   **POI:** Added an endpoint to retrieve tags with Point of Interest (POI) counts.
+*   **POI:** Implemented functionality to retrieve all POI data information for a multi-POI counting version.
+*   **Campaign Reporting:** Moved the `/poi` endpoint to `/pois`.
+*   **Campaign Reporting:** Added paginated reporting data for campaign POIs, including a single POI endpoint.
+*   **Campaigns:** Added multi-POI merge tags validation.
+*   **Profiles:** Automatically export `poi_id` when a POI filter is applied.
+*   **Profiles:** Implemented multi-POI export (with `poi_id`).
+*   **Core:** Implemented maintenance mode API.
+*   **Core:** Enabled HTTP/2 support.
+*   **Campaigns:** Campaigns are now adapted to support multi-POI functionality, including TestSMS and SeedList.
+*   **Media Planning:** Added POI filters.
+*   **POI Data:** Moved POI data Data Access Object (DAO) to `dmc-domain`.
+*   **Reservations:** Implemented acquisition of multi-POI reservations, including adding `poi_id` to beta tester reservation profiles.
 ### Data
+*   **POI:** Standardized and simplified POI identification by renaming `poi_external_id` fields to `poi_id`.
+*   **SMS Reporting:** Added `poi_id` columns for enhanced SMS reporting.
+*   **Media Planning:** Introduced a new `trading_area_item` view for media planning purposes, including geographic point data and POI tags.
+*   **Campaign Stats:** Added POI column to campaign statistics.
+*   Enhanced multi-POI counting capabilities.
+*   **Data Layer:** Added sharing project and analytics hub to data layer module.
+### Infrastructure
+*   **Backend:** Added POI data table configuration.
+*   **Backend:** Added POI CSV template.
 
-*   **Blacklist Fix:** Corrected an issue with mobile phone blacklists.
-*   **Data Accuracy:** Fixed issues with data collection and trading area calculations.
+##  🐛 Bug Fixes
 
-### Backend & Infrastructure
-
-*   **Technical Fixes:** Addressed issues related to configuration, data accuracy, and template rendering.
-
-### Frontend
-
-*   **UI Fixes:** Resolved various UI issues, including scaling problems, button functionality, and layout issues in media planning and reporting.
-
+###  Frontend
+*   **Reporting:** Fixed scaling issues in the URL view details.
+*   **Campaigns:** Resolved issues with the POI list.
+*   **Media Planning:** Fixed an issue that disabled the "save version" button while loading.
+*   **Media Planning:** Fixed layout issues by adding margin and fixed width.
+*   **Media Planning:** Fixed multiple issues.
+*   **Media Planning:** Automatically dispatch potential calculations.
+*   **Media Planning:** Corrected the upload text.
+### Backend
+*   **Campaign Reporting:** Fixed the `AccountKPI Stopped` JSON tag.
+*   **Profiles:** Added a label for the POI dimension.
+*   **Counting:** Fixed the count SQL template.
+*   **POI:** Fixed `viper` gomod version.
+### Data
+*   Correct profiles deletion job to remove profiles collected more then 3 years ago
+*   Corrects mobile phone number cleaning by fixing the nohash blacklists
+*   Fixed inconsistencies in `collect_date_expired` to include null values.
+*   **Trading Areas:** Improved ranking of trading areas by type and distance.
+### Infrastructure
+*   Fixed auth routines.
+*   Fixed missing IAM for FS sync on Console Dataflow.
+*   Fixed default null in schema struct.
+*   Fixed partition ID field case.
+*   Fix terraform changes detection.
+### Cleaning
+*   Updated the maximum municipalities count to 35074.
 
 # Changelog v0.2512.2  
 
