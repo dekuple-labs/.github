@@ -1,3 +1,94 @@
+# Changelog v0.2530.0
+
+## ✨ New Features
+
+### Frontend
+- **Network Page:** A new network page is available, providing a visualization of your network.
+- **Revenue Reporting:**
+  -  Implemented a campaign details view for revenue reporting.
+  -  Added filters for revenue reporting 2.0.
+  -  Implemented a Points of Interest (POI) details view for revenue reporting.
+  -  Improved the main revenue page.
+  -  Introduced a combo bar line chart.
+  -  Introduced a stacked bar chart.
+  -  Introduced a doughnut chart.
+- **App Store Catalog:** Introduced a catalog page for the app store.
+
+### Backend
+
+- **Trading Area Service:** Integrated POIDataDAO into the trading area service to enhance data handling and retrieval.
+- **POI Audience Statistics:** Added functionality to retrieve audience statistics for Points of Interest.
+- **Media Planning Enhancements:** Improved POI distribution in multi-POI scenarios.
+- **Geocoding API:** Enhanced the Geocoding API to include Bounding Box filtering and IRIS GeoJSON support.
+- **Revenue Reporting:**
+  - Implemented first version of revenue reporting endpoints.
+  - Enhanced revenue reporting with campaign costs from campaign_stats and added sales data.
+  - Implemented the first MCP (Management Console Protocol) server.
+- **Okube Statistics:** Added okube statistics to clients.
+- **Campaign Tracking:** Added the ability to track visits for campaigns.
+- **Campaign Operation Dates:** Added operation start and end date fields to the Campaign model.
+- **POI Data Tags:** Enhanced the GetAll method to select tags in POI data.
+- **Network Feature:** Introduced network-related functionalities.
+
+### Data
+
+- **Sales View:** Added a sales view for advertisers.
+- **Points of Interest (POI) and Trading Area Items:** Added new views for Points of Interest and Trading Area Items.
+- **Campaign Operation Dates:** Added `operation_start_date` & `operation_end_date` fields to the campaigns.
+- **Municipalities Data:** Added `city_hall_coordinates` to municipalities.
+- **Profiles:** Added collection URL and user IP to cleaned staging profiles.
+- **Campaign Statistics:** Added visits to campaign statistics.
+- **Revenue data:** Implemented aggregated_sales, enriched_sales tables.
+
+### Infrastructure
+
+- **Okube Jobs and Services:** Added infrastructure configurations for Okube jobs and services, including statistics export.
+- **DMC API Core Configuration:** Updated dmc-api-core configuration to include sale_stats and poi data.
+- **Backend Subcommand & MCP Server:** Introduced backend subcommand and MCP server infrastructure setup.
+- **Revenue configuration:** Added revenue configuration.
+- **Okube Synchronization:** Enabled campaign synchronization with Okube.
+- **SFTP Sync:** Increased CPU and memory for large SFTP files.
+- **DataStore Scheduler API:** Enabled the Scheduler API on the Datastore project.
+- **AI Platform API:** Enabled the AI Platform API.
+- **Complaint Blacklisting:** Added IAM to insert complaints into the blacklist via procedure.
+- **Pubsub Subscriptions:** Added/increased default TTL on pubsub subscriptions of data-loader.
+- **BigQuery Data Viewer Role:** Added the BigQuery Data Viewer role to operators on the Stable Data Platform.
+
+## 🐛 Bug Fixes
+
+### Frontend
+
+- **Styling Issues:** Fixed styling issues.
+- **Media Planning Wording:** Corrected the wording for media planning targeting, changing "potential" to "volume."
+- **Tooltip Costs:** Fixed the cost display on tooltips.
+- **CSS Fixes:** Corrected the sidenav collapse button position on small screens.
+- **Demo Fixes:** Addressed potential issues with demo on macOS.
+- **Typo:** Fixed a typo in the app exchange section.
+- **Campaign Launch:** Fixed an issue where campaigns could not be launched with save or update.
+
+### Backend
+
+- **OpenAPI Documentation:** Added campaign parameter in 'revenue-reportings' endpoints for clarity.
+- **Profile Dimensions:** Fixed an issue with null dimensions in profiles.
+- **Okube Campaign updates:** Fixed extra fields when updating and retrieving Okube campaigns.
+
+### Data
+
+- **Campaign Scheduler Partition Filter:** Fixed a required partition filter for the campaign scheduler.
+- **Street Assertions:** Removed assertions on street columns in address referentials.
+- **Corsica Cities:** Fixed municipality join for cities in Corsica.
+- **Complaints:** Fixed issues related to inserting complaints.
+- **Trading Areas:** Remove retrocompatibility field and update ROW_NUMBER() logic for better clarity
+- **Population Sum:** Cast population sum to int64 for consistency
+
+### Infrastructure
+
+- **Deletion Protection:** Added deletion protection to Okube jobs and services.
+- **MCP arguments:** Corrected MCP arguments.
+- **Okube Sync API Key:** Fixed the Okube sync API key.
+- **HTTP 503 Alerts:** Filtered HTTP 503 alerts.
+- **Secret Manager:** Enabled Secret Manager on dmc-dw-advertisers.
+
 # CHANGELOG v0.2518.0
 
 ## ✨ New Features
